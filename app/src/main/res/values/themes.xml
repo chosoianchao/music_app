@@ -1,0 +1,28 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.MusicApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/light_primary_color</item>
+
+        <!-- Darker variant of the primary color -->
+        <item name="colorPrimaryDark">@color/light_primary_dark_color</item>
+
+        <!-- Accent color for UI controls and highlights -->
+        <item name="colorAccent">@color/light_accent_color</item>
+
+        <!-- Background color for the entire app -->
+        <item name="android:windowBackground">@color/light_background_color</item>
+
+        <!-- Text color for the app's primary content -->
+        <item name="android:textColorPrimary">@color/light_text_primary</item>
+
+        <!-- Text color for secondary content, such as hints and subtitles -->
+        <item name="android:textColorSecondary">@color/light_text_secondary</item>
+
+        <!-- Status bar and navigation bar color (if applicable) -->
+        <item name="android:statusBarColor">@color/light_status_bar_color</item>
+        <item name="android:navigationBarColor">@color/light_navigation_bar_color</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+</resources>

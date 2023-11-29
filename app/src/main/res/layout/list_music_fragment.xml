@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topAppBar_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/search"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="@string/app_name" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topAppBar_parent"
+        android:background="@color/colorPrimaryDark"
+        app:tabGravity="fill"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorColor="#009688"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorGravity="center"
+        app:tabIndicatorHeight="@dimen/_40sdp"
+        app:tabMaxWidth="0dp"
+        app:tabMode="fixed"
+        app:tabTextColor="@color/colorAccent" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_layout"
+        android:layout_alignBottom="@id/frag_bottom_player" />
+
+    <FrameLayout
+        android:id="@+id/frag_bottom_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:padding="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/iv_bottom_album"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/broken_image" />
+
+            <ImageView
+                android:id="@+id/skip_next_bottom"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_skip_next" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fl_play_pause_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_toStartOf="@id/skip_next_bottom"
+                android:backgroundTint="@color/white"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_play"
+                app:fabSize="mini" />
+
+            <TextView
+                android:id="@+id/tv_song_name_mini_player"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toStartOf="@id/fl_play_pause_mini"
+                android:layout_toEndOf="@id/iv_bottom_album"
+                android:maxLines="1"
+                android:text="Song name is here"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_artist_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_song_name_mini_player"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toStartOf="@id/fl_play_pause_mini"
+                android:layout_toEndOf="@id/iv_bottom_album"
+                android:maxLines="1"
+                android:text="Artist Name"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

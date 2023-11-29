@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.musicapp.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        app:destination="@id/splashFragment"
+        tools:layout="@layout/splash_fragment">
+
+        <action
+            android:id="@+id/action_splashFragment_to_listMusicFragment"
+            app:destination="@id/listMusicFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/listMusicFragment"
+        android:name="com.example.musicapp.ui.listmusic.main.ListMusicFragment"
+        android:label="ListMusicFragment"
+        tools:layout="@layout/list_music_fragment">
+        <action
+            android:id="@+id/action_listMusicFragment_to_playerFragment"
+            app:destination="@id/playerFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_listMusicFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.example.musicapp.ui.player.PlayerFragment"
+        android:label="PlayerFragment"
+        tools:layout="@layout/player_fragment" />
+    <fragment
+        android:id="@+id/albumDetailFragment"
+        android:name="com.example.musicapp.ui.albumdetails.AlbumDetailFragment"
+        android:label="AlbumDetailFragment"
+        tools:layout="@layout/album_detail_fragment">
+        <action
+            android:id="@+id/action_albumDetailFragment_to_playerFragment"
+            app:destination="@id/playerFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+</navigation>
